@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dibungo.netlify.app/sitemap.xml
+Sitemap: https://dibungo.netlify.app/root-domain/sitemap.xml
