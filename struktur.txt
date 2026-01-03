@@ -1,0 +1,25 @@
+dibungo-website/
+├── index.html
+├── profile.html
+├── portfolio.html
+├── templates.html
+├── robots.txt                ← Tempatkan di ROOT
+├── sitemap.xml               ← Tempatkan di ROOT
+├── netlify.toml              ← Tempatkan di ROOT (opsional)
+├── _redirects                ← Tempatkan di ROOT (opsional)
+├── assets/
+│   ├── css/
+│   │   └── main.css
+│   ├── js/
+│   │   ├── main.js
+│   │   └── portfolio.js
+│   ├── images/
+│   │   ├── logo.svg
+│   │   └── hero-bg.jpeg
+│   └── portfolio/
+│       ├── project1.jpg
+│       ├── project2.jpg
+│       └── ...
+└── templates/                ← Folder template 
+    ├── template1/
+    └── template2/

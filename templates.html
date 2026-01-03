@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates - DI Bungo</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+    <style>
+        /* Additional styles for templates page */
+        .template-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 40px 0 30px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background: var(--card-color);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .template-card {
+            background: var(--card-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+            border-color: var(--primary-color);
+        }
+        
+        .template-preview {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .template-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .template-card:hover .template-preview img {
+            transform: scale(1.05);
+        }
+        
+        .template-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .template-card:hover .template-overlay {
+            opacity: 1;
+        }
+        
+        .template-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .template-btn {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .template-btn:hover {
+            background: #00cc77;
+            transform: translateY(-3px);
+        }
+        
+        .template-btn.outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .template-btn.outline:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+        
+        .template-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .template-desc {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .template-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .template-feature {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .template-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .template-price {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .template-price.free {
+            color: var(--secondary-color);
+        }
+        
+        .template-type {
+            padding: 4px 12px;
+            background: var(--bg-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .subdomain-info {
+            background: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 60px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .subdomain-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .subdomain-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .subdomain-item {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .subdomain-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .subdomain-link {
+            display: block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+        
+        .subdomain-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .template-notice {
+            background: rgba(0, 204, 255, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+        
+        .template-notice h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .template-actions {
+                flex-direction: column;
+            }
+            
+            .template-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    
+    <!-- Json LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dibungo.netlify.app/#organization",
+      "name": "DI Bungo",
+      "url": "https://dibungo.netlify.app/",
+      "logo": "https://dibungo.netlify.app/assets/images/logo.svg",
+      "sameAs": [
+    
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dibungo.netlify.app/#website",
+      "url": "https://dibungo.netlify.app/",
+      "name": "DI Bungo - Digital Innovation for Local Business",
+      "publisher": {
+        "@id": "https://dibungo.netlify.app/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://dibungo.netlify.app/#localbusiness",
+      "parentOrganization": {
+        "@id": "https://dibungo.netlify.app/#organization"
+      },
+      "name": "DI Bungo",
+      "description": "Layanan digital untuk UMKM Kabupaten Bungo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kabupaten Bungo",
+        "addressRegion": "Jambi",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-1.51667",
+        "longitude": "102.13333"
+      },
+      "telephone": "+6283161593659",
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "priceRange": "Rp500.000 - Rp5.000.000"
+    }
+  ]
+}
+</script>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                <span>DI BUNGO</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="templates.html" class="nav-link active">Templates</a></li>
+                <li class="nav-item">
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-ball"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Templates Hero -->
+    <section class="hero" style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Template <span class="highlight">Website</span></h1>
+                <p class="hero-subtitle">Pilih Template Siap Pakai untuk Bisnis Anda</p>
+                <p class="hero-desc">Berbagai template website modern yang dapat disesuaikan dengan kebutuhan bisnis Anda. Preview langsung melalui subdomain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Categories -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="template-categories" id="template-categories">
+                <button class="category-btn active" data-category="all">Semua Template</button>
+                <button class="category-btn" data-category="business">Bisnis</button>
+                <button class="category-btn" data-category="portfolio">Portfolio</button>
+                <button class="category-btn" data-category="ecommerce">E-commerce</button>
+                <button class="category-btn" data-category="blog">Blog</button>
+                <!-- <button class="category-btn" data-category="free">Gratis</button> -->
+            </div>
+            
+            <div class="templates-grid" id="templates-grid">
+                <!-- Template 1 -->
+               <!-- <div class="template-card" data-category="business free">
+                    <div class="template-preview">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Pro Template">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="http://template1.dibungo.com" target="_blank" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">Business Pro</h3>
+                        <p class="template-desc">Template profesional untuk bisnis dengan layout clean, section layanan, testimoni, dan blog.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">Responsif</span>
+                            <span class="template-feature">SEO Friendly</span>
+                            <span class="template-feature">Kontak Form</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price free">GRATIS</div>
+                            <span class="template-type">WordPress</span>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Template 2 -->
+                <div class="template-card" data-category="portfolio">
+                    <div class="template-preview">
+                        <img src="assets/temp/temp1.jpg" alt="Les Privat TK">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="https://template1.dibungo.netlify.app/" target="_blank" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">Les Privat TK</h3>
+                        <p class="template-desc">Template untuk para guru, yang membuka les privat khusus anak TK.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">Multipage</span>
+                            <span class="template-feature">Form Pendaftaran</span>
+                            <span class="template-feature">Animasi</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price">Rp 700.000</div>
+                            <span class="template-type">Static Website</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Template 3 -->
+               <!-- <div class="template-card" data-category="ecommerce business">
+                    <div class="template-preview">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Online Store Template">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="http://template3.dibungo.com" target="_blank" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">Online Store</h3>
+                        <p class="template-desc">Template toko online lengkap dengan katalog produk, keranjang belanja, dan sistem checkout.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">E-commerce</span>
+                            <span class="template-feature">Payment Ready</span>
+                            <span class="template-feature">Product Filter</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price">Rp 750.000</div>
+                            <span class="template-type">WordPress + WooCommerce</span>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Template 4 -->
+              <!--  <div class="template-card" data-category="blog free">
+                    <div class="template-preview">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blog Master Template">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="#" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">Blog Master</h3>
+                        <p class="template-desc">Template blog modern dengan sistem kategori, tag, pencarian, dan komentar.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">Blog System</span>
+                            <span class="template-feature">SEO Optimized</span>
+                            <span class="template-feature">Social Share</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price free">GRATIS</div>
+                            <span class="template-type">WordPress</span>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Template 5 -->
+                <div class="template-card" data-category="business">
+                    <div class="template-preview">
+                        <img src="assets/temp/temp2.jpg" alt="UMKM Jajanan">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="https://template2.dibungo.netlify.app/" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">UMKM Jajanan</h3>
+                        <p class="template-desc">Template yang disediakan untuk semua UMKM Jajanan.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">Multipage</span>
+                            <span class="template-feature">Integrasi WA</span>
+                            <span class="template-feature">Responsif</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price">Rp 500.000</div>
+                            <span class="template-type">Static Website</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Template 6 -->
+                <div class="template-card" data-category="ecommerce portfolio">
+                    <div class="template-preview">
+                        <img src="assets/temp/temp3.jpg" alt="Toko Jersey">
+                        <div class="template-overlay">
+                            <div class="template-actions">
+                                <a href="https://template3.dibungo.netlify.app/" class="template-btn">
+                                    <i class="fas fa-eye"></i> Preview
+                                </a>
+                                <a href="index.html#contact" class="template-btn outline">
+                                    <i class="fas fa-shopping-cart"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3 class="template-title">Toko Jersey</h3>
+                        <p class="template-desc">Template untuk pelaku usaha yang bergerak di penjualan jersey.</p>
+                        
+                        <div class="template-features">
+                            <span class="template-feature">Product Gallery</span>
+                            <span class="template-feature">Integrasi WA</span>
+                            <span class="template-feature">Responsif</span>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-price">Rp 500.000</div>
+                            <span class="template-type">Static Website</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subdomain Information -->
+            <div class="subdomain-info">
+                <h3><i class="fas fa-globe"></i> Cara Preview Template melalui Subdomain</h3>
+                <p>Setiap template dapat diakses melalui subdomain khusus untuk preview. Fitur ini memungkinkan Anda melihat template secara langsung sebelum memutuskan untuk membeli.</p>
+                
+                <div class="subdomain-list">
+                    <div class="subdomain-item">
+                        <a href="http://template1.dibungo.netlify.app/" target="_blank" class="subdomain-link">
+                            template1.dibungo.netlify.app
+                        </a>
+                        <p>Template: Les Privat TK</p>
+                    </div>
+                    <div class="subdomain-item">
+                        <a href="http://template2.dibungo.netlify.app/" target="_blank" class="subdomain-link">
+                            template2.dibungo.netlify.app
+                        </a>
+                        <p>Template: UMKM Jajanan</p>
+                    </div>
+                    <div class="subdomain-item">
+                        <a href="http://template3.dibungo.netlify.app/" target="_blank" class="subdomain-link">
+                            template3.dibungo.netlify.app
+                        </a>
+                        <p>Template: Toko Jersey</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Template Notice -->
+            <div class="template-notice">
+                <h4><i class="fas fa-info-circle"></i> Informasi Penting</h4>
+                <p>Biaya tersebut belum termasuk maintenance konten, update lanjutan, dan SEO Dasar. Hubungi kami untuk konsultasi template yang sesuai dengan kebutuhan bisnis Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding" style="background-color: var(--card-color);">
+        <div class="container">
+            <div class="cta-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title">Butuh <span class="highlight">Template Kustom</span>?</h2>
+                <p style="margin: 20px 0 30px; font-size: 1.1rem;">Kami juga dapat membuat template khusus sesuai kebutuhan spesifik bisnis Anda. Konsultasikan kebutuhan Anda dengan tim kami.</p>
+                <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#contact" class="btn btn-primary">Konsultasi Gratis</a>
+                    <a href="portfolio.html" class="btn btn-outline">Lihat Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                        <span>DI BUNGO</span>
+                    </a>
+                    <p>Digital Innovation for Local Business. Membangun solusi digital untuk UMKM Kabupaten Bungo.</p>
+                </div>
+                
+               <!-- <div class="footer-links">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                    </ul>
+                </div> -->
+                
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="index.html#services">Static Website</a></li>
+                        <li><a href="index.html#services">WordPress Website</a></li>
+                        <li><a href="index.html#services">Basic SEO</a></li>
+                    </ul>
+                </div>
+                
+               <!-- <div class="footer-newsletter">
+                    <h3>Berlangganan Newsletter</h3>
+                    <p>Dapatkan tips dan promo terbaru seputar digital marketing.</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Email Anda" required>
+                        <button type="submit" class="btn btn-outline">Subscribe</button>
+                    </form>
+                </div> -->
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> DI Bungo. All rights reserved.</p>
+                <p>Kabupaten Bungo, Jambi, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Template Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const templateCards = document.querySelectorAll('.template-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter templates
+                    templateCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Subdomain notice for preview links
+            const previewLinks = document.querySelectorAll('a[href*="template"]');
+            previewLinks.forEach(link => {
+                if (link.href.includes('dibungo.com') && !link.href.startsWith('http://localhost')) {
+                    link.addEventListener('click', function(e) {
+                        if (!this.href.startsWith('http://template')) {
+                            e.preventDefault();
+                            alert('Preview template akan tersedia setelah website di-deploy dengan domain yang sesuai. Untuk saat ini, template dapat dilihat melalui demo langsung dari kami.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

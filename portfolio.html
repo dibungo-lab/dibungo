@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - DI Bungo</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+    
+    <!-- Json LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dibungo.netlify.app/#organization",
+      "name": "DI Bungo",
+      "url": "https://dibungo.netlify.app/",
+      "logo": "https://dibungo.netlify.app/assets/images/logo.svg",
+      "sameAs": [
+    
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dibungo.netlify.app/#website",
+      "url": "https://dibungo.netlify.app/",
+      "name": "DI Bungo - Digital Innovation for Local Business",
+      "publisher": {
+        "@id": "https://dibungo.netlify.app/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://dibungo.netlify.app/#localbusiness",
+      "parentOrganization": {
+        "@id": "https://dibungo.netlify.app/#organization"
+      },
+      "name": "DI Bungo",
+      "description": "Layanan digital untuk UMKM Kabupaten Bungo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kabupaten Bungo",
+        "addressRegion": "Jambi",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-1.51667",
+        "longitude": "102.13333"
+      },
+      "telephone": "+6283161593659",
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "priceRange": "Rp500.000 - Rp5.000.000"
+    }
+  ]
+}
+</script>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                <span>DI BUNGO</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li class="nav-item"><a href="templates.html" class="nav-link">Templates</a></li>
+                <li class="nav-item">
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-ball"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="hero" style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Portfolio <span class="highlight">Kami</span></h1>
+                <p class="hero-subtitle">Karya & Proyek yang Telah Diselesaikan</p>
+                <p class="hero-desc">Lihat berbagai website dan solusi digital yang telah kami kembangkan untuk UMKM dan bisnis di Kabupaten Bungo.</p>
+                
+                <div class="portfolio-filters" style="margin-top: 30px;">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="static">Static Website</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                    <button class="filter-btn" data-filter="seo">SEO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio section-padding">
+        <div class="container">
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="wordpress seo">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/portfolio/project1.jpg" alt="Andisa Movement">
+                            <div class="portfolio-overlay">
+                                <a href="https://andisamovement.wordpress.com" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">WordPress</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Andisa Movement</h3>
+                            <p class="portfolio-desc">Website untuk jasa layanan teknologi/digital, berupa desain logo, dan lainnya.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">SEO</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> Agustus 2024</span>
+                                <span><i class="far fa-clock"></i> 2 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="seo static">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/portfolio/project2.jpg" alt="Andwisakti">
+                            <div class="portfolio-overlay">
+                                <a href="https://andwisakti.vercel.app/" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">SEO + Static</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Andwisakti</h3>
+                            <p class="portfolio-desc">Website statis untuk menampilkan karya dari Andwisakti.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> Oktober 2025</span>
+                                <span><i class="far fa-clock"></i> 1 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+               <!-- <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="UMKM Kerajinan Tangan">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">E-commerce</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">UMKM Kerajinan Tangan</h3>
+                            <p class="portfolio-desc">Toko online untuk produk kerajinan tangan lokal dengan sistem pembayaran online dan tracking order.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">WooCommerce</span>
+                                <span class="tech-tag">Payment Gateway</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> Februari 2023</span>
+                                <span><i class="far fa-clock"></i> 3 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="seo static">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/portfolio/project3.jpg" alt="Elektrikal Kids">
+                            <div class="portfolio-overlay">
+                                <a href="https://elektrikalkids.vercel.app/" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">SEO + Static</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Elektrikal Kids</h3>
+                            <p class="portfolio-desc">Website informasi service elektronik rumah tangga dengan optimasi SEO untuk muncul di halaman pertama Google.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">SEO</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> Desember 2025</span>
+                                <span><i class="far fa-clock"></i> 2 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="wordpress seo">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/portfolio/project4.jpg" alt="Taher Teknik">
+                            <div class="portfolio-overlay">
+                                <a href="https://taherteknikac.wordpress.com" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">WordPress + SEO</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Taher Teknik</h3>
+                            <p class="portfolio-desc">Website jasa service ac dengan sistem terintegrasi dengan whatsapp, dan media sosial lainnya.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">SEO</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> Agustus 2025</span>
+                                <span><i class="far fa-clock"></i> 2.5 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="static game">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/portfolio/project5.jpg" alt="Game Danish Zayn">
+                            <div class="portfolio-overlay">
+                                <a href="https://game-danish-zayn.vercel.app/" class="portfolio-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <span class="portfolio-badge">Static Website</span>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Game Danish Zayn</h3>
+                            <p class="portfolio-desc">Merupakan game mencocokkan gambar dengan beberapa tema pilihan, serta musik tambahan supaya lebih menarik.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Game</span>
+                            </div>
+                            <div class="portfolio-meta">
+                                <span><i class="far fa-calendar"></i> September 2025</span>
+                                <span><i class="far fa-clock"></i> 1.5 minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-stats" style="margin-top: 60px; text-align: center;">
+                <h3 class="section-title" style="font-size: 2rem;">Statistik <span class="highlight">Portfolio</span></h3>
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="12">0</div>
+                        <p class="stat-label">Proyek Selesai</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="5">0</div>
+                        <p class="stat-label">Klien Puas</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="5">0</div>
+                        <p class="stat-label">Website Statis</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="2">0</div>
+                        <p class="stat-label">Website WordPress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding" style="background-color: var(--card-color);">
+        <div class="container">
+            <h2 class="section-title">Testimoni <span class="highlight">Klien</span></h2>
+            <p class="section-subtitle">Apa kata mereka tentang kerja sama dengan DI Bungo</p>
+            
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Website yang dibuat oleh DI Bungo, sangat membantu bisnis lokal dalam menghadapi perkembangan teknologi yang begitu pesat."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sakti</h4>
+                            <p>Pemilik Andisa Movement</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"DI Bungo memberikan solusi website yang terjangkau namun tetap berkualitas."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Viky</h4>
+                            <p>Pemilik Elektrikal Kids</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Sangat recommended untuk bisnis lokal!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Heri</h4>
+                            <p>Pemilik Taher Teknik</p>
+                        </div>
+                        <div class="author-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title">Siap Membuat <span class="highlight">Website</span> untuk Bisnis Anda?</h2>
+                <p style="margin: 20px 0 30px; font-size: 1.1rem;">Bergabunglah dengan bisnis lokal yang telah mempercayakan pembuatan website mereka kepada DI Bungo.</p>
+                <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#contact" class="btn btn-primary">Konsultasi Gratis</a>
+                    <a href="templates.html" class="btn btn-outline">Lihat Template</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                        <span>DI BUNGO</span>
+                    </a>
+                    <p>Digital Innovation for Local Business. Membangun solusi digital untuk UMKM Kabupaten Bungo.</p>
+                </div>
+                
+               <!-- <div class="footer-links">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                    </ul>
+                </div> -->
+                
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="index.html#services">Static Website</a></li>
+                        <li><a href="index.html#services">WordPress Website</a></li>
+                        <li><a href="index.html#services">Basic SEO</a></li>
+                    </ul>
+                </div>
+                
+               <!-- <div class="footer-newsletter">
+                    <h3>Berlangganan Newsletter</h3>
+                    <p>Dapatkan tips dan promo terbaru seputar digital marketing.</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Email Anda" required>
+                        <button type="submit" class="btn btn-outline">Subscribe</button>
+                    </form>
+                </div> -->
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> DI Bungo. All rights reserved.</p>
+                <p>Kabupaten Bungo, Jambi, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+</body>
+</html>
