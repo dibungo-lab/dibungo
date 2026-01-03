@@ -18,7 +18,7 @@
     
     <!-- Profile Page -->
     <url>
-        <loc>https://dibungo.netlify.app/profile</loc>
+        <loc>https://dibungo.netlify.app/profile.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -26,7 +26,7 @@
     
     <!-- Portfolio Page -->
     <url>
-        <loc>https://dibungo.netlify.app/portfolio</loc>
+        <loc>https://dibungo.netlify.app/portfolio.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -34,7 +34,7 @@
     
     <!-- Templates Page -->
     <url>
-        <loc>https://dibungo.netlify.app/templates</loc>
+        <loc>https://dibungo.netlify.app/templates.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -71,21 +71,21 @@
     
     <!-- Template Previews -->
     <url>
-        <loc>https://dibungo.netlify.app/templates/template1/</loc>
+        <loc>https://dibungo.netlify.app/templates/template1/index.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://dibungo.netlify.app/templates/template2/</loc>
+        <loc>https://dibungo.netlify.app/templates/template2/index.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://dibungo.netlify.app/templates/template3/</loc>
+        <loc>https://dibungo.netlify.app/templates/template3/index.html</loc>
         <lastmod>2026-01-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
