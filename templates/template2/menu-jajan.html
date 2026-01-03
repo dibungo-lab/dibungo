@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Jajanan - Menu Jajanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- WhatsApp Floating Button dengan Bootstrap Icon -->
+    <a href="https://wa.me/6281234567890?text=Halo%20UMKM%20Jajanan,%20saya%20ingin%20bertanya%20tentang%20produk%20anda" class="whatsapp-float" target="_blank" aria-label="Hubungi via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">UMKM<span>Jajanan</span></a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="profil.html" class="nav-link">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu-jajan.html" class="nav-link active">Menu Jajanan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#kontak" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Menu Hero -->
+    <section class="page-hero menu-hero">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll">Menu <span>Jajanan</span></h1>
+            <p class="page-subtitle animate-on-scroll">Temukan berbagai pilihan jajanan tradisional Indonesia dengan cita rasa autentik yang siap memanjakan lidah Anda.</p>
+        </div>
+    </section>
+    
+    <!-- Menu Filter -->
+    <section class="menu-filter">
+        <div class="container">
+            <div class="filter-buttons animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="kue-basah">Kue Basah</button>
+                <button class="filter-btn" data-filter="kue-kering">Kue Kering</button>
+                <button class="filter-btn" data-filter="jajanan-pasar">Jajanan Pasar</button>
+                <button class="filter-btn" data-filter="minuman">Minuman</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menu Grid -->
+    <section class="menu-grid">
+        <div class="container">
+            <div class="products-container">
+                <!-- Product 1 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="kue-basah">
+                    <div class="product-image">
+                        <!-- Ganti gambar klepon.jpg dengan gambar Anda -->
+                        <img src="images/produk-1.jpg" alt="Klepon">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Klepon</h3>
+                            <span class="product-price">Rp 3.000 / buah</span>
+                        </div>
+                        <p>Jajanan tradisional berisi gula merah cair dengan taburan kelapa parut yang gurih. Tekstur kenyal dan manisnya pas.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Kue Basah</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Klepon" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="kue-kering">
+                    <div class="product-image">
+                        <!-- Ganti gambar lapis-legit.jpg dengan gambar Anda -->
+                        <img src="images/produk-2.jpg" alt="Lapis Legit">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Lapis Legit</h3>
+                            <span class="product-price">Rp 50.000 / box</span>
+                        </div>
+                        <p>Kue berlapis dengan rasa manis legit yang khas, dibuat dengan telur, mentega, dan rempah-rempah pilihan. Cocok untuk segala acara.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Kue Kering</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Lapis%20Legit" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="jajanan-pasar">
+                    <div class="product-image">
+                        <!-- Ganti gambar dadar-gulung.jpg dengan gambar Anda -->
+                        <img src="images/produk-3.jpg" alt="Dadar Gulung">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Dadar Gulung</h3>
+                            <span class="product-price">Rp 4.000 / buah</span>
+                        </div>
+                        <p>Kue crepe hijau dengan isian kelapa manis, lembut dan menggugah selera. Warna hijau alami dari daun suji.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Jajanan Pasar</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Dadar%20Gulung" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="kue-basah">
+                    <div class="product-image">
+                        <!-- Ganti gambar kue-lumpur.jpg dengan gambar Anda -->
+                        <img src="images/produk-1.jpg" alt="Kue Lumpur">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Kue Lumpur</h3>
+                            <span class="product-price">Rp 5.000 / buah</span>
+                        </div>
+                        <p>Kue dengan tekstur lembut seperti lumpur, berisi potongan kismis dan memiliki rasa kentang yang khas.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Kue Basah</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Kue%20Lumpur" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="kue-kering">
+                    <div class="product-image">
+                        <!-- Ganti gambar nastar.jpg dengan gambar Anda -->
+                        <img src="images/produk-2.jpg" alt="Nastar">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Nastar</h3>
+                            <span class="product-price">Rp 45.000 / box</span>
+                        </div>
+                        <p>Kue kering lebaran dengan isian selai nanas homemade. Renyah di luar, lembut di dalam dengan butiran keju parut.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Kue Kering</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Nastar" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="minuman">
+                    <div class="product-image">
+                        <!-- Ganti gambar wedang-jahe.jpg dengan gambar Anda -->
+                        <img src="images/produk-3.jpg" alt="Wedang Jahe">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Wedang Jahe</h3>
+                            <span class="product-price">Rp 8.000 / gelas</span>
+                        </div>
+                        <p>Minuman hangat dari jahe segar, gula merah, dan rempah-rempah. Cocok untuk menghangatkan tubuh dan menyehatkan.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Minuman</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Wedang%20Jahe" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="jajanan-pasar">
+                    <div class="product-image">
+                        <!-- Ganti gambar serabi.jpg dengan gambar Anda -->
+                        <img src="images/produk-1.jpg" alt="Serabi">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Serabi</h3>
+                            <span class="product-price">Rp 7.000 / porsi</span>
+                        </div>
+                        <p>Kue tradisional berbahan dasar tepung beras dengan santan, dimasak di atas tungku arang. Disajikan dengan saus kinca.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Jajanan Pasar</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Serabi" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card menu-item animate-on-scroll" data-category="kue-basah">
+                    <div class="product-image">
+                        <!-- Ganti gambar putu-ayu.jpg dengan gambar Anda -->
+                        <img src="images/produk-2.jpg" alt="Putu Ayu">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3>Putu Ayu</h3>
+                            <span class="product-price">Rp 4.500 / buah</span>
+                        </div>
+                        <p>Kue hijau dengan topping kelapa parut di bagian atas. Memiliki aroma pandan yang wangi dan tekstur yang lembut.</p>
+                        <div class="product-category">
+                            <span class="category-badge">Kue Basah</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20Putu%20Ayu" class="btn-order" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Info -->
+    <section class="order-info">
+        <div class="container">
+            <div class="info-card animate-on-scroll">
+                <div class="info-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Cara Memesan</h3>
+                    <p>1. Pilih produk yang ingin dipesan</p>
+                    <p>2. Klik tombol "Pesan via WhatsApp" pada produk tersebut</p>
+                    <p>3. Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan</p>
+                    <p>4. Kami akan merespons secepatnya untuk proses selanjutnya</p>
+                </div>
+            </div>
+            
+            <div class="info-card animate-on-scroll">
+                <div class="info-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Pengiriman</h3>
+                    <p>• Gratis ongkir untuk wilayah Kota Bandung (minimal pembelian Rp 50.000)</p>
+                    <p>• Pengiriman luar kota menggunakan jasa ekspedisi terpercaya</p>
+                    <p>• Pesanan diproses maksimal 1x24 jam setelah konfirmasi</p>
+                    <p>• Pengemasan khusus untuk menjaga kualitas produk selama pengiriman</p>
+                </div>
+            </div>
+            
+            <div class="info-card animate-on-scroll">
+                <div class="info-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Pembayaran</h3>
+                    <p>• Transfer Bank (BCA, Mandiri, BRI)</p>
+                    <p>• E-Wallet (OVO, GoPay, Dana, ShopeePay)</p>
+                    <p>• Cash on Delivery (COD) untuk wilayah Bandung</p>
+                    <p>• Pembayaran sebelum pengiriman untuk pesanan luar kota</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container animate-on-scroll">
+            <h2>Masih Bingung Memilih?</h2>
+            <p>Hubungi kami untuk konsultasi pemilihan jajanan yang sesuai dengan acara atau selera Anda.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890?text=Halo%20UMKM%20Jajanan,%20saya%20ingin%20konsultasi%20tentang%20pemilihan%20jajanan" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                </a>
+                <a href="index.html#kontak" class="btn btn-secondary">Lihat Kontak Lainnya</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">UMKM<span>Jajanan</span></a>
+                    <p>Melestarikan jajanan tradisional Indonesia dengan cita rasa autentik dan kualitas terbaik.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Menu Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil</a></li>
+                        <li><a href="menu-jajan.html">Menu Jajanan</a></li>
+                        <li><a href="index.html#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Jam Operasional</h3>
+                    <ul>
+                        <li>Senin - Jumat: 08.00 - 17.00</li>
+                        <li>Sabtu: 08.00 - 15.00</li>
+                        <li>Minggu: 09.00 - 14.00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 UMKM Jajanan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
