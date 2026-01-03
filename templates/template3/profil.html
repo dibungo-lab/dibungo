@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Toko Jersey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="dark-mode">
+    <!-- Tombol WhatsApp Floating -->
+    <a href="https://wa.me/6283161593659?text=Halo%20Toko%20Jersey,%20saya%20ingin%20bertanya%20tentang%20produk%20jersey" class="whatsapp-float" target="_blank" id="whatsapp-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="whatsapp-icon">
+            <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Navbar Sticky -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo animate__animated animate__pulse">Toko<span>Jersey</span></a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="profil.html" class="nav-link active">Profil</a></li>
+                <li class="nav-item"><a href="produk.html" class="nav-link">Produk</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profil Header -->
+    <section class="profil-header">
+        <div class="container">
+            <div class="profil-header-content">
+                <div class="profil-text animate-on-scroll">
+                    <h1>Tentang <span class="highlight">Toko Jersey</span></h1>
+                    <p>Kami adalah komunitas pecinta jersey sepak bola yang berdedikasi untuk menyediakan koleksi jersey terbaik dari berbagai musim liga dengan kualitas premium dan harga terjangkau.</p>
+                </div>
+                <div class="profil-image animate-on-scroll">
+                    <div class="jersey-display">
+                        <div class="jersey-display-item">
+                            <!-- Ganti URL ini dengan foto jersey Anda -->
+                            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=200&h=250&fit=crop&crop=center" alt="Manchester United Jersey">
+                        </div>
+                        <div class="jersey-display-item">
+                            <!-- Ganti URL ini dengan foto jersey Anda -->
+                            <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=200&h=250&fit=crop&crop=center" alt="Barcelona Jersey">
+                        </div>
+                        <div class="jersey-display-item">
+                            <!-- Ganti URL ini dengan foto jersey Anda -->
+                            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=200&h=250&fit=crop&crop=center" alt="Liverpool Jersey">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi Misi -->
+    <section class="visi-misi">
+        <div class="container">
+            <div class="visi-misi-content">
+                <div class="visi-card animate-on-scroll">
+                    <div class="visi-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Visi Kami</h3>
+                    <p>Menjadi destinasi utama para kolektor jersey sepak bola di Indonesia dengan menyediakan koleksi terlengkap dari berbagai musim liga.</p>
+                </div>
+                
+                <div class="misi-card animate-on-scroll">
+                    <div class="misi-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Misi Kami</h3>
+                    <ul>
+                        <li>Menyediakan jersey dengan kualitas authentic</li>
+                        <li>Menghadirkan koleksi dari berbagai musim liga</li>
+                        <li>Memberikan harga yang kompetitif</li>
+                        <li>Memberikan pengalaman berbelanja terbaik</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenapa Memilih Kami -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Kenapa Memilih <span class="highlight">Kami?</span></h2>
+            
+            <div class="reasons">
+                <div class="reason-item animate-on-scroll">
+                    <div class="reason-number">01</div>
+                    <h3>Koleksi Lengkap</h3>
+                    <p>Dari musim klasik hingga terbaru, kami punya koleksi jersey yang lengkap.</p>
+                </div>
+                
+                <div class="reason-item animate-on-scroll">
+                    <div class="reason-number">02</div>
+                    <h3>Kualitas Terjamin</h3>
+                    <p>Setiap jersey melalui quality check untuk memastikan kualitas terbaik.</p>
+                </div>
+                
+                <div class="reason-item animate-on-scroll">
+                    <div class="reason-number">03</div>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Kualitas premium dengan harga yang bersahabat untuk kolektor.</p>
+                </div>
+                
+                <div class="reason-item animate-on-scroll">
+                    <div class="reason-number">04</div>
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Proses cepat dari pemesanan hingga pengiriman ke tangan Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Komunitas -->
+    <section class="community">
+        <div class="container">
+            <div class="community-content">
+                <div class="community-text animate-on-scroll">
+                    <h2>Bergabung dengan <span class="highlight">Komunitas</span></h2>
+                    <p>Kami bukan hanya toko jersey, tapi juga komunitas bagi para pecinta sepak bola. Ikuti perkembangan terbaru dan diskusi seputar jersey di Instagram kami.</p>
+                    <a href="#" class="btn btn-instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> Ikuti Instagram Kami
+                    </a>
+                </div>
+                <div class="community-stats animate-on-scroll">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Jersey Terjual</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Musim Tersedia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Tahun Pengalaman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">Toko<span>Jersey</span></a>
+                    <p>Specialist jersey sepak bola dari berbagai musim liga. Authentic quality dengan harga terjangkau.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil</a></li>
+                        <li><a href="produk.html">Produk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Kontak Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                        <li><i class="fas fa-phone"></i> +62 812-3456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@tokojersey.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Jam Operasional</h3>
+                    <ul>
+                        <li>Senin - Jumat: 09.00 - 18.00</li>
+                        <li>Sabtu: 09.00 - 15.00</li>
+                        <li>Minggu: Libur</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Toko Jersey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- File JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
