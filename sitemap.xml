@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- DI Bungo Sitemap -->
+    <!-- Generated for: https://dibungo.netlify.app/ -->
+    <!-- Last Updated: 2026-01-03 -->
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://dibungo.netlify.app/</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Profile Page -->
+    <url>
+        <loc>https://dibungo.netlify.app/profile.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Portfolio Page -->
+    <url>
+        <loc>https://dibungo.netlify.app/portfolio.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Templates Page -->
+    <url>
+        <loc>https://dibungo.netlify.app/templates.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>
