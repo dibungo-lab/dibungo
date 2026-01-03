@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - Les Privat TK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/children.png">
+</head>
+<body>
+    <!-- Bubbles Background -->
+    <div class="bubbles"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://img.icons8.com/color/96/000000/children.png" alt="Les Privat TK Logo" class="logo-img">
+                Les<span>Privat</span>TK
+            </a>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="profil.html" class="nav-link">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="materi.html" class="nav-link">Materi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="galeri.html" class="nav-link">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a href="daftar.html" class="nav-link btn btn-secondary active">Daftar Sekarang</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding-top: 160px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Daftar Les Privat TK</h1>
+                    <p>Isi formulir di bawah ini untuk mendaftarkan anak Anda. Tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk konfirmasi dan jadwal belajar.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1516627145497-ae6953059f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1084&q=80" alt="Pendaftaran Les Privat TK">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Formulir Pendaftaran</h2>
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">Silakan lengkapi data diri Anda dan anak di bawah ini. Pastikan data yang Anda isi benar dan valid.</p>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="nama_anak">Nama Anak *</label>
+                        <input type="text" id="nama_anak" name="nama_anak" class="form-control" placeholder="Masukkan nama lengkap anak" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="usia">Usia Anak *</label>
+                        <input type="number" id="usia" name="usia" class="form-control" placeholder="Masukkan usia anak (3-6 tahun)" min="3" max="6" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nama_ortu">Nama Orang Tua *</label>
+                        <input type="text" id="nama_ortu" name="nama_ortu" class="form-control" placeholder="Masukkan nama lengkap orang tua" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="contoh: nama@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon/WhatsApp *</label>
+                        <input type="tel" id="telepon" name="telepon" class="form-control" placeholder="contoh: 081234567890" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="area">Area Tempat Tinggal *</label>
+                        <input type="text" id="area" name="area" class="form-control" placeholder="contoh: Jakarta Selatan, Bekasi, dll" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fokus">Fokus Pembelajaran *</label>
+                        <select id="fokus" name="fokus" class="form-control" required>
+                            <option value="" disabled selected>Pilih fokus pembelajaran</option>
+                            <option value="Calistung">Calistung (Membaca, Menulis, Berhitung)</option>
+                            <option value="Kognitif">Pengembangan Kognitif</option>
+                            <option value="Bahasa Inggris">Bahasa Inggris Dasar</option>
+                            <option value="Motorik">Keterampilan Motorik & Seni</option>
+                            <option value="Karakter">Pengembangan Karakter & Sosial</option>
+                            <option value="Komprehensif">Semua Materi (Komprehensif)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="waktu">Waktu Belajar yang Diinginkan *</label>
+                        <select id="waktu" name="waktu" class="form-control" required>
+                            <option value="" disabled selected>Pilih waktu belajar</option>
+                            <option value="Pagi">Pagi (08.00 - 11.00)</option>
+                            <option value="Siang">Siang (13.00 - 16.00)</option>
+                            <option value="Sore">Sore (16.00 - 19.00)</option>
+                            <option value="Fleksibel">Fleksibel (Sesuai kesepakatan)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pesan">Pesan atau Pertanyaan Tambahan</label>
+                        <textarea id="pesan" name="pesan" class="form-control" placeholder="Tuliskan pesan atau pertanyaan Anda di sini (opsional)"></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 40px;">
+                        <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem; padding: 18px;">
+                            <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Kirim Pendaftaran via WhatsApp
+                        </button>
+                    </div>
+                    
+                    <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        Dengan mengisi formulir ini, Anda menyetujui <a href="#" style="color: var(--primary-color); font-weight: bold;">syarat dan ketentuan</a> yang berlaku.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Information -->
+    <section class="features" style="background-color: #f0f7ff;">
+        <div class="container">
+            <h2 class="section-title">Paket Les Privat TK</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem;">Kami menawarkan berbagai paket les privat yang dapat disesuaikan dengan kebutuhan dan anggaran Anda.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Paket Coba</h3>
+                    <div style="background: linear-gradient(135deg, var(--primary-light), white); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                        <p style="color: var(--primary-color); font-size: 2.2rem; font-weight: bold;">Rp 150.000</p>
+                        <p>2 pertemuan @60 menit</p>
+                    </div>
+                    <ul style="text-align: left; margin-top: 20px; list-style: none;">
+                        <li style="margin-bottom: 10px;">✓ Trial kelas dengan guru</li>
+                        <li style="margin-bottom: 10px;">✓ Assessment awal kemampuan</li>
+                        <li style="margin-bottom: 10px;">✓ Laporan perkembangan singkat</li>
+                        <li>✓ Cocok untuk mengenal metode kami</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" style="border: 3px solid var(--primary-color); transform: scale(1.05); position: relative;">
+                    <h3>Paket Basic</h3>
+                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                        <p style="color: white; font-size: 2.5rem; font-weight: bold;">Rp 600.000</p>
+                        <p style="color: white;">8 pertemuan @60 menit</p>
+                    </div>
+                    <ul style="text-align: left; margin-top: 20px; list-style: none;">
+                        <li style="margin-bottom: 10px;">✓ Semua fitur Paket Coba</li>
+                        <li style="margin-bottom: 10px;">✓ Materi sesuai fokus pilihan</li>
+                        <li style="margin-bottom: 10px;">✓ Laporan perkembangan berkala</li>
+                        <li style="margin-bottom: 10px;">✓ Konsultasi via WhatsApp</li>
+                        <li>✓ Modul pembelajaran digital</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Paket Premium</h3>
+                    <div style="background: linear-gradient(135deg, var(--accent-color), white); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                        <p style="color: var(--dark-color); font-size: 2.2rem; font-weight: bold;">Rp 1.100.000</p>
+                        <p>16 pertemuan @60 menit</p>
+                    </div>
+                    <ul style="text-align: left; margin-top: 20px; list-style: none;">
+                        <li style="margin-bottom: 10px;">✓ Semua fitur Paket Basic</li>
+                        <li style="margin-bottom: 10px;">✓ Free assessment menyeluruh</li>
+                        <li style="margin-bottom: 10px;">✓ Sertifikat penyelesaian</li>
+                        <li style="margin-bottom: 10px;">✓ 2x konsultasi orang tua</li>
+                        <li style="margin-bottom: 10px;">✓ Modul fisik + digital</li>
+                        <li>✓ Free merchandise edukatif</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 40px;">
+                <a href="#registrationForm" class="btn">Daftar Sekarang</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Berapa lama satu sesi belajar?</h3>
+                    <p>Satu sesi belajar berlangsung selama 60 menit, dengan istirahat singkat di tengah sesi jika diperlukan. Durasi ini optimal untuk menjaga konsentrasi anak usia dini.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Apakah guru datang ke rumah?</h3>
+                    <p>Ya, guru kami akan datang ke rumah siswa. Hal ini membuat anak belajar dalam lingkungan yang nyaman dan familiar, yang penting untuk perkembangan belajar anak usia dini.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Bagaimana jika anak sakit atau berhalangan?</h3>
+                    <p>Anda dapat membatalkan sesi dengan pemberitahuan minimal 3 jam sebelumnya. Sesi yang dibatalkan dapat dijadwal ulang tanpa biaya tambahan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Les Privat TK</h3>
+                    <p>Membantu perkembangan anak usia dini melalui pembelajaran yang menyenangkan, interaktif, dan edukatif di lingkungan rumah yang nyaman.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil</a></li>
+                        <li><a href="materi.html">Materi</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="daftar.html">Pendaftaran</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Jl. Pendidikan Anak No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> (021) 4567-8901</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@lesprivatTK.com</li>
+                        <li><i class="fab fa-whatsapp" style="margin-right: 10px;"></i> +62 812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Les Privat TK. All rights reserved. | Belajar Seru, Tumbuh Optimal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
