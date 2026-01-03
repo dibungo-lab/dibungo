@@ -90,41 +90,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-    
-    <!-- Portfolio Project Links -->
-    <url>
-        <loc>https://andisamovement.wordpress.com</loc>
-        <lastmod>2024-08-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://andwisakti.vercel.app/</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://elektrikalkids.vercel.app/</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://taherteknikac.wordpress.com</loc>
-        <lastmod>2025-08-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://game-danish-zayn.vercel.app/</loc>
-        <lastmod>2025-09-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
 
 </urlset>
