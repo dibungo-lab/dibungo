@@ -61,7 +61,7 @@
                 "url": "https://dibungo.netlify.app/",
                 "logo": "https://dibungo.netlify.app/assets/images/logo.svg",
                 "description": "Platform inovasi digital untuk UMKM Kabupaten Bungo, Jambi.",
-                "foundingDate": "2023",
+                "foundingDate": "2026",
                 "founder": {
                     "@type": "Person",
                     "name": "DI Bungo Team"
@@ -152,94 +152,199 @@
             {
                 "@type": "Service",
                 "name": "Google Maps Business Setup",
-                "serviceType": "Digital Marketing",
-                "provider": {
-                    "@id": "https://dibungo.netlify.app/#organization"
-                },
-                "description": "Setup dan optimasi Google Business Profile untuk meningkatkan visibilitas lokal di Google Maps."
-            },
-            {
-                "@type": "Service",
-                "name": "Basic SEO for Business",
-                "serviceType": "SEO Service",
-                "provider": {
-                    "@id": "https://dibungo.netlify.app/#organization"
-                },
-                "description": "Optimasi mesin pencari dasar untuk meningkatkan visibilitas website di Google."
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://dibungo.netlify.app/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Layanan",
-                        "item": "https://dibungo.netlify.app/#services"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "Kontak",
-                        "item": "https://dibungo.netlify.app/#contact"
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Apa itu DI Bungo?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "DI Bungo adalah platform inovasi digital yang berfokus pada pengembangan solusi teknologi untuk pelaku usaha di Kabupaten Bungo, Jambi. Kami menyediakan layanan pembuatan website, Google Maps Business Setup, dan optimasi SEO dengan harga terjangkau."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Berapa lama proses pembuatan website?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Waktu pengerjaan tergantung pada kompleksitas proyek. Website statis sederhana biasanya selesai dalam 3-5 hari kerja, sedangkan website WordPress dengan fitur khusus membutuhkan waktu 7-14 hari kerja."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Apakah website yang dibuat responsif?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Ya, semua website yang kami kembangkan sepenuhnya responsif dan dioptimalkan untuk tampil sempurna di desktop, tablet, dan smartphone. Kami melakukan testing menyeluruh di berbagai ukuran layar."
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-    </script>
-
-    <!-- Additional Structured Data for Review -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "LocalBusiness",
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://dibungo.netlify.app/#organization",
             "name": "DI Bungo",
-            "image": "https://dibungo.netlify.app/assets/images/logo.svg"
+            "alternateName": "Digital Innovation Bungo",
+            "url": "https://dibungo.netlify.app/",
+            "logo": "https://dibungo.netlify.app/assets/images/logo.svg",
+            "description": "Platform inovasi digital untuk UMKM Kabupaten Bungo, Jambi.",
+            "foundingDate": "2026",
+            "founder": {
+                "@type": "Person",
+                "name": "DI Bungo Team"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Kabupaten Bungo",
+                "addressRegion": "Jambi",
+                "addressCountry": "ID"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+6283161593659",
+                "contactType": "Customer Service",
+                "email": "dibungoinfo@gmail.com",
+                "availableLanguage": ["Indonesian", "English"]
+            }
         },
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "12",
-        "reviewCount": "5"
-    }
-    </script>
+        {
+            "@type": "WebSite",
+            "@id": "https://dibungo.netlify.app/#website",
+            "url": "https://dibungo.netlify.app/",
+            "name": "DI Bungo",
+            "description": "Digital Innovation for Local Business",
+            "publisher": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "inLanguage": "id-ID"
+        },
+        {
+            "@type": "LocalBusiness",
+            "parentOrganization": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "name": "DI Bungo - Digital Innovation for Local Business",
+            "image": "https://dibungo.netlify.app/assets/images/hero-bg.jpeg",
+            "@id": "https://dibungo.netlify.app/#localbusiness",
+            "url": "https://dibungo.netlify.app/",
+            "telephone": "+6283161593659",
+            "priceRange": "Rp500.000 - Rp5.000.000",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Kabupaten Bungo",
+                "addressLocality": "Muara Bungo",
+                "addressRegion": "Jambi",
+                "postalCode": "37211",
+                "addressCountry": "ID"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -1.51667,
+                "longitude": 102.13333
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+            }
+        },
+        {
+            "@type": "Service",
+            "name": "Static Website Development",
+            "serviceType": "Website Development",
+            "provider": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "description": "Website statis dengan performa tinggi, keamanan optimal, dan biaya rendah untuk UMKM.",
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Kabupaten Bungo, Jambi"
+            }
+        },
+        {
+            "@type": "Service",
+            "name": "WordPress Website Development",
+            "serviceType": "Website Development",
+            "provider": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "description": "Website berbasis WordPress dengan tema gratis namun profesional untuk bisnis kecil dan menengah."
+        },
+        {
+            "@type": "Service",
+            "name": "Google Maps Business Setup",
+            "serviceType": "Digital Marketing",
+            "provider": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "description": "Setup dan optimasi Google Business Profile untuk meningkatkan visilitas lokal di Google Maps."
+        },
+        {
+            "@type": "Service",
+            "name": "Basic SEO for Business",
+            "serviceType": "SEO Service",
+            "provider": {
+                "@id": "https://dibungo.netlify.app/#organization"
+            },
+            "description": "Optimasi mesin pencari dasar untuk meningkatkan visibilitas website di Google."
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dibungo.netlify.app/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Layanan",
+                    "item": "https://dibungo.netlify.app/#services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Kontak",
+                    "item": "https://dibungo.netlify.app/#contact"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Apa itu DI Bungo?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "DI Bungo adalah platform inovasi digital yang berfokus pada pengembangan solusi teknologi untuk pelaku usaha di Kabupaten Bungo, Jambi. Kami menyediakan layanan pembuatan website, Google Maps Business Setup, dan optimasi SEO dengan harga terjangkau."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Berapa lama proses pembuatan website?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Waktu pengerjaan tergantung pada kompleksitas proyek. Website statis sederhana biasanya selesai dalam 3-5 hari kerja, sedangkan website WordPress dengan fitur khusus membutuhkan waktu 7-14 hari kerja."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Apakah website yang dibuat responsif?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ya, semua website yang kami kembangkan sepenuhnya responsif dan dioptimalkan untuk tampil sempurna di desktop, tablet, dan smartphone. Kami melakukan testing menyeluruh di berbagai ukuran layar."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+
+<!-- Additional Structured Data for Review -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "DI Bungo",
+        "image": "https://dibungo.netlify.app/assets/images/logo.svg"
+    },
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "12",
+    "reviewCount": "5"
+}
+</script>
     
 </head>
 <body>
