@@ -1,43 +1,14 @@
-[[redirects]]
-  from = "/profile"
-  to = "/profile.html"
-  status = 200
-
-[[redirects]]
-  from = "/portfolio"
-  to = "/portfolio.html"
-  status = 200
-
-[[redirects]]
-  from = "/templates"
-  to = "/templates.html"
-  status = 200
-
-# Template previews
-[[redirects]]
-  from = "/template1"
-  to = "/templates/template1/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/template2"
-  to = "/templates/template2/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/template3"
-  to = "/templates/template3/index.html"
-  status = 200
-
-# EXCLUDE sitemap and robots!
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/sitemap.xml"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/robots.txt"
-  to = "/robots.txt"
-  status = 200
-  force = true
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = """
+      default-src 'self';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data:;
+    """
+    Cross-Origin-Opener-Policy = "same-origin"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
