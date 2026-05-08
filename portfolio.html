@@ -29,9 +29,7 @@
       "name": "DI Bungo",
       "url": "https://dibungo.netlify.app/",
       "logo": "https://dibungo.netlify.app/assets/images/logo.svg",
-      "sameAs": [
-    
-      ]
+      "sameAs": []
     },
     {
       "@type": "WebSite",
@@ -67,8 +65,24 @@
     }
   ]
 }
-</script>
-    
+    </script>
+
+    <style>
+      /* ── Inline guard: pastikan filter & counter berjalan
+         meski portfolio.js / main.js gagal load ── */
+
+      /* Transisi show/hide item portfolio */
+      .portfolio-item {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .portfolio-item.hidden {
+        display: none;
+      }
+      .portfolio-item.fade-out {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -96,7 +110,7 @@
                 </li>
             </ul>
             
-            <button class="hamburger">
+            <button class="hamburger" aria-label="Toggle menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -109,15 +123,17 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Portfolio <span class="highlight">Kami</span></h1>
-                <p class="hero-subtitle">Karya & Proyek yang Telah Diselesaikan</p>
+                <p class="hero-subtitle">Karya &amp; Proyek yang Telah Diselesaikan</p>
                 <p class="hero-desc">Lihat berbagai website dan solusi digital yang telah kami kembangkan untuk UMKM dan bisnis di Kabupaten Bungo.</p>
                 
                 <div class="portfolio-filters" style="margin-top: 30px;">
+                    <!-- data-filter harus cocok dengan data-category di item -->
                     <button class="filter-btn active" data-filter="all">Semua</button>
                     <button class="filter-btn" data-filter="static">Static Website</button>
                     <button class="filter-btn" data-filter="wordpress">WordPress</button>
                     <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
                     <button class="filter-btn" data-filter="seo">SEO</button>
+                    <button class="filter-btn" data-filter="game">Game</button>
                 </div>
             </div>
         </div>
@@ -127,13 +143,21 @@
     <section class="portfolio section-padding">
         <div class="container">
             <div class="portfolio-grid" id="portfolio-grid">
-                <!-- Project 1 -->
+
+                <!-- Project 1: Andisa Movement -->
                 <div class="portfolio-item" data-category="wordpress seo">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="assets/portfolio/project1.jpg" alt="Andisa Movement">
+                            <img src="assets/portfolio/project1.jpg"
+                                 alt="Andisa Movement"
+                                 loading="lazy"
+                                 onerror="this.src='assets/images/placeholder.jpg'">
                             <div class="portfolio-overlay">
-                                <a href="https://andisamovement.wordpress.com" class="portfolio-link" target="_blank">
+                                <a href="https://andisamovement.wordpress.com"
+                                   class="portfolio-link"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Buka Andisa Movement">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -153,14 +177,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
+
+                <!-- Project 2: Andwisakti -->
                 <div class="portfolio-item" data-category="seo static">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="assets/portfolio/project2.jpg" alt="Andwisakti">
+                            <img src="assets/portfolio/project2.jpg"
+                                 alt="Andwisakti"
+                                 loading="lazy"
+                                 onerror="this.src='assets/images/placeholder.jpg'">
                             <div class="portfolio-overlay">
-                                <a href="https://andwisakti.vercel.app/" class="portfolio-link" target="_blank">
+                                <a href="https://andwisakti.vercel.app/"
+                                   class="portfolio-link"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Buka Andwisakti">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -181,42 +212,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
-               <!-- <div class="portfolio-item" data-category="ecommerce">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="UMKM Kerajinan Tangan">
-                            <div class="portfolio-overlay">
-                                <a href="#" class="portfolio-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <span class="portfolio-badge">E-commerce</span>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">UMKM Kerajinan Tangan</h3>
-                            <p class="portfolio-desc">Toko online untuk produk kerajinan tangan lokal dengan sistem pembayaran online dan tracking order.</p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">WordPress</span>
-                                <span class="tech-tag">WooCommerce</span>
-                                <span class="tech-tag">Payment Gateway</span>
-                            </div>
-                            <div class="portfolio-meta">
-                                <span><i class="far fa-calendar"></i> Februari 2023</span>
-                                <span><i class="far fa-clock"></i> 3 minggu</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                
-                <!-- Project 4 -->
+
+                <!-- Project 3: Elektrikal Kids -->
                 <div class="portfolio-item" data-category="seo static">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="assets/portfolio/project3.jpg" alt="Elektrikal Kids">
+                            <img src="assets/portfolio/project3.jpg"
+                                 alt="Elektrikal Kids"
+                                 loading="lazy"
+                                 onerror="this.src='assets/images/placeholder.jpg'">
                             <div class="portfolio-overlay">
-                                <a href="https://elektrikalkids.vercel.app/" class="portfolio-link" target="_blank">
+                                <a href="https://elektrikalkids.vercel.app/"
+                                   class="portfolio-link"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Buka Elektrikal Kids">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -236,14 +246,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 5 -->
+
+                <!-- Project 4: Taher Teknik -->
                 <div class="portfolio-item" data-category="wordpress seo">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="assets/portfolio/project4.jpg" alt="Taher Teknik">
+                            <img src="assets/portfolio/project4.jpg"
+                                 alt="Taher Teknik"
+                                 loading="lazy"
+                                 onerror="this.src='assets/images/placeholder.jpg'">
                             <div class="portfolio-overlay">
-                                <a href="https://taherteknikac.wordpress.com" class="portfolio-link" target="_blank">
+                                <a href="https://taherteknikac.wordpress.com"
+                                   class="portfolio-link"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Buka Taher Teknik">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -251,7 +268,7 @@
                         </div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">Taher Teknik</h3>
-                            <p class="portfolio-desc">Website jasa service ac dengan sistem terintegrasi dengan whatsapp, dan media sosial lainnya.</p>
+                            <p class="portfolio-desc">Website jasa service AC dengan sistem terintegrasi dengan WhatsApp dan media sosial lainnya.</p>
                             <div class="portfolio-tech">
                                 <span class="tech-tag">WordPress</span>
                                 <span class="tech-tag">SEO</span>
@@ -264,14 +281,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 6 -->
+
+                <!-- Project 5: Game Danish Zayn -->
                 <div class="portfolio-item" data-category="static game">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="assets/portfolio/project5.jpg" alt="Game Danish Zayn">
+                            <img src="assets/portfolio/project5.jpg"
+                                 alt="Game Danish Zayn"
+                                 loading="lazy"
+                                 onerror="this.src='assets/images/placeholder.jpg'">
                             <div class="portfolio-overlay">
-                                <a href="https://game-danish-zayn.vercel.app/" class="portfolio-link" target="_blank">
+                                <a href="https://game-danish-zayn.vercel.app/"
+                                   class="portfolio-link"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Buka Game Danish Zayn">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -279,7 +303,7 @@
                         </div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">Game Danish Zayn</h3>
-                            <p class="portfolio-desc">Merupakan game mencocokkan gambar dengan beberapa tema pilihan, serta musik tambahan supaya lebih menarik.</p>
+                            <p class="portfolio-desc">Game mencocokkan gambar dengan beberapa tema pilihan, serta musik tambahan supaya lebih menarik.</p>
                             <div class="portfolio-tech">
                                 <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">CSS</span>
@@ -292,8 +316,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+
+            </div><!-- /#portfolio-grid -->
+
+            <!-- Stats -->
             <div class="portfolio-stats" style="margin-top: 60px; text-align: center;">
                 <h3 class="section-title" style="font-size: 2rem;">Statistik <span class="highlight">Portfolio</span></h3>
                 <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
@@ -325,10 +351,9 @@
             <p class="section-subtitle">Apa kata mereka tentang kerja sama dengan DI Bungo</p>
             
             <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Website yang dibuat oleh DI Bungo, sangat membantu bisnis lokal dalam menghadapi perkembangan teknologi yang begitu pesat."</p>
+                        <p>"Website yang dibuat oleh DI Bungo sangat membantu bisnis lokal dalam menghadapi perkembangan teknologi yang begitu pesat."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -345,7 +370,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <p>"DI Bungo memberikan solusi website yang terjangkau namun tetap berkualitas."</p>
@@ -365,7 +389,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <p>"Sangat recommended untuk bisnis lokal!"</p>
@@ -388,7 +411,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta section-padding">
         <div class="container">
             <div class="cta-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
@@ -414,16 +437,6 @@
                     <p>Digital Innovation for Local Business. Membangun solusi digital untuk UMKM Kabupaten Bungo.</p>
                 </div>
                 
-               <!-- <div class="footer-links">
-                    <h3>Menu</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="templates.html">Templates</a></li>
-                    </ul>
-                </div> -->
-                
                 <div class="footer-links">
                     <h3>Layanan</h3>
                     <ul>
@@ -432,15 +445,6 @@
                         <li><a href="index.html#services">Basic SEO</a></li>
                     </ul>
                 </div>
-                
-               <!-- <div class="footer-newsletter">
-                    <h3>Berlangganan Newsletter</h3>
-                    <p>Dapatkan tips dan promo terbaru seputar digital marketing.</p>
-                    <form id="newsletter-form">
-                        <input type="email" placeholder="Email Anda" required>
-                        <button type="submit" class="btn btn-outline">Subscribe</button>
-                    </form>
-                </div> -->
             </div>
             
             <div class="footer-bottom">
@@ -450,7 +454,113 @@
         </div>
     </footer>
 
+    <!-- Scripts: main.js tetap pertama untuk theme/navbar/counter -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/portfolio.js"></script>
+
+    <!--
+      portfolio.js diganti dengan inline script di bawah.
+      Alasan: menghindari race condition, error load file eksternal,
+      dan memastikan filter selalu berjalan tanpa dependensi tambahan.
+    -->
+    <script>
+    (function () {
+      'use strict';
+
+      /* ── 1. FILTER PORTFOLIO ── */
+      function initFilter() {
+        var btnEls  = document.querySelectorAll('.filter-btn');
+        var itemEls = document.querySelectorAll('.portfolio-item');
+
+        if (!btnEls.length || !itemEls.length) return;
+
+        btnEls.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var filter = this.getAttribute('data-filter');
+
+            /* Update tombol aktif */
+            btnEls.forEach(function (b) { b.classList.remove('active'); });
+            this.classList.add('active');
+
+            /* Tampilkan / sembunyikan item */
+            itemEls.forEach(function (item) {
+              var cats = (item.getAttribute('data-category') || '').split(' ');
+              var show = (filter === 'all') || cats.indexOf(filter) !== -1;
+
+              if (show) {
+                item.classList.remove('hidden');
+                /* Kecil timeout agar browser sempat repaint sebelum fade-in */
+                requestAnimationFrame(function () {
+                  item.classList.remove('fade-out');
+                });
+              } else {
+                item.classList.add('fade-out');
+                /* Sembunyikan setelah transisi selesai (300ms) */
+                setTimeout(function () {
+                  item.classList.add('hidden');
+                }, 300);
+              }
+            });
+          });
+        });
+      }
+
+      /* ── 2. COUNTER ANIMASI (fallback jika main.js tidak menangani) ── */
+      function initCounters() {
+        var counters = document.querySelectorAll('.stat-number[data-count]');
+        if (!counters.length) return;
+
+        /* Cek apakah main.js sudah menjalankan counter (nilai sudah berubah) */
+        var alreadyRan = Array.from(counters).some(function (el) {
+          return parseInt(el.textContent, 10) > 0;
+        });
+        if (alreadyRan) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el     = entry.target;
+            var target = parseInt(el.getAttribute('data-count'), 10);
+            var start  = 0;
+            var dur    = 1500; /* ms */
+            var step   = Math.ceil(target / (dur / 16));
+            observer.unobserve(el);
+
+            var timer = setInterval(function () {
+              start += step;
+              if (start >= target) {
+                el.textContent = target;
+                clearInterval(timer);
+              } else {
+                el.textContent = start;
+              }
+            }, 16);
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (el) { observer.observe(el); });
+      }
+
+      /* ── 3. TAHUN FOOTER (fallback jika main.js tidak menangani) ── */
+      function initYear() {
+        var el = document.getElementById('current-year');
+        if (el && !el.textContent.trim()) {
+          el.textContent = new Date().getFullYear();
+        }
+      }
+
+      /* ── Init setelah DOM siap ── */
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          initFilter();
+          initCounters();
+          initYear();
+        });
+      } else {
+        initFilter();
+        initCounters();
+        initYear();
+      }
+    })();
+    </script>
 </body>
 </html>
