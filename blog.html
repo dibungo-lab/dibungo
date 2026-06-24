@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel Digital untuk UMKM - DI Bungo</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+
+    <style>
+        /* Tambahan style khusus halaman artikel */
+        .blog-hero {
+            padding-top: 140px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 204, 255, 0.05) 100%);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .blog-card {
+            background: var(--card-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-title a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .blog-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-readmore {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .blog-readmore:hover {
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .blog-hero {
+                padding-top: 120px;
+                padding-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (sama dengan index.html) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                <span>DI BUNGO</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="templates.html" class="nav-link">Templates</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link active">Artikel</a></li>
+                <li class="nav-item">
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-ball"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Artikel -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="section-title">Artikel <span class="highlight">Digital</span></h1>
+            <p class="section-subtitle">Wawasan dan tips seputar digitalisasi untuk UMKM Kabupaten Bungo</p>
+        </div>
+    </section>
+
+    <!-- Daftar Artikel -->
+    <section class="blog-list">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- ARTIKEL 1: Literasi Digital untuk UMKM -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog-literasi-digital.jpg" alt="Ilustrasi literasi digital untuk UMKM" onerror="this.src='https://placehold.co/600x400/1a1a2e/00ff88?text=Literasi+Digital'">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Literasi Digital</span>
+                        <h2 class="blog-title">
+                            <a href="artikel-literasi-digital-umkm.html">Literasi Digital: Bekal Wajib Pelaku UMKM di Era Sekarang</a>
+                        </h2>
+                        <div class="blog-date">15 Mei 2026</div>
+                        <p class="blog-excerpt">
+                            Banyak pelaku usaha di Bungo masih ragu memulai bisnis online karena merasa tidak paham teknologi. Padahal literasi digital bukan berarti harus jadi programmer. 
+                            Mari kita bahas langkah kecil yang bisa dilakukan siapa saja.
+                        </p>
+                        <a href="artikel-literasi-digital-umkm.html" class="blog-readmore">
+                            Baca selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ARTIKEL 2: UMKM Perlu Website -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog-umkm-website.jpg" alt="Ilustrasi UMKM memiliki website sendiri" onerror="this.src='https://placehold.co/600x400/1a1a2e/00ff88?text=UMKM+Website'">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Bisnis Online</span>
+                        <h2 class="blog-title">
+                            <a href="artikel-umkm-perlu-website.html">Mengapa UMKM Kabupaten Bungo Perlu Punya Website Sendiri?</a>
+                        </h2>
+                        <div class="blog-date">10 Juni 2026</div>
+                        <p class="blog-excerpt">
+                            Cukup dengan media sosial saja belum cukup untuk membangun kepercayaan pelanggan. 
+                            Website memberi kesan profesional, bisa ditemukan kapan saja, dan menjadi aset digital jangka panjang. 
+                            Simak alasannya dari sudut pandang pembeli.
+                        </p>
+                        <a href="artikel-umkm-perlu-website.html" class="blog-readmore">
+                            Baca selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ARTIKEL 3: SEO untuk Pemula -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/images/blog-seo-pemula.jpg" alt="Ilustrasi SEO untuk pemula" onerror="this.src='https://placehold.co/600x400/1a1a2e/00ff88?text=SEO+Pemula'">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">SEO</span>
+                        <h2 class="blog-title">
+                            <a href="artikel-seo-untuk-pemula.html">Apa Itu SEO? Cara Agar Usaha Anda Ditemukan di Google Tanpa Iklan</a>
+                        </h2>
+                        <div class="blog-date">24 Juni 2026</div>
+                        <p class="blog-excerpt">
+                            SEO terdengar rumit bagi pemula, padahal prinsip dasarnya sederhana. 
+                            Anda tidak perlu jadi ahli teknologi untuk membuat usaha Anda muncul di halaman pertama Google. 
+                            Mari kita kupas dengan bahasa sehari-hari.
+                        </p>
+                        <a href="artikel-seo-untuk-pemula.html" class="blog-readmore">
+                            Baca selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (sama dengan index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/images/logo.svg" alt="DI Bungo Logo">
+                        <span>DI BUNGO</span>
+                    </a>
+                    <p>Digital Innovation for Local Business. Membangun solusi digital untuk UMKM Kabupaten Bungo.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="index.html#services">Static Website</a></li>
+                        <li><a href="index.html#services">WordPress Website</a></li>
+                        <li><a href="index.html#services">Basic SEO</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>DI Bungo. Kabupaten Bungo, Jambi, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Update active nav link untuk halaman artikel
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === 'blog.html') {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
